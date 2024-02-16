@@ -13,3 +13,4 @@ Scope for Improvement:
 Handling Network and IO exceptions via Interface.
 Handling Loaders in an efficient way.
 Better Scope for using Roboelectric or Mockito Framework for JUnit Test Cases.
+![image](https://github.com/harsha4199/MovieDb/assets/71061989/1d0d4d81-fbf6-4828-9a19-60f26969bab4)
