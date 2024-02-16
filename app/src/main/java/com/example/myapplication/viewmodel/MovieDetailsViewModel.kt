@@ -25,6 +25,11 @@ class MovieDetailsViewModel @Inject constructor(private val repository: MovieDet
     private val _isLoading = MutableStateFlow(false)
     val isLoading = _isLoading.asStateFlow()
 
+
+    /** This function is responsible for fetching movie details
+     from the repository ,It takes a movie ID as input and
+    returns a Flow of MovieDetails **/
+
     fun getMovieDetails(movieId: Int): Flow<MovieDetails> = flow {
         _isLoading.value = true
         repository.getMovieDetails(movieId).body()?.let {

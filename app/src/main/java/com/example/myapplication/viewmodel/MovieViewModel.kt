@@ -28,6 +28,11 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading
 
+    /**This represents a flow of paginated movie data and
+    constructs a Pager with the specified configuration,
+    creates a flow of paginated data,
+    and caches it in the viewModelScope. **/
+
     val movieFlow: Flow<PagingData<ResultsItem>> =
         Pager(
             config = PagingConfig(

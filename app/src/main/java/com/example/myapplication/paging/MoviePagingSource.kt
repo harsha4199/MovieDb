@@ -3,12 +3,18 @@ package com.example.myapplication.paging
 /*created
  by
  Harsha Devnani*/
+
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.myapplication.model.ResultsItem
 import com.example.myapplication.repository.MovieRepository
 import retrofit2.HttpException
 import java.io.IOException
+
+/** class encapsulates the logic for loading paginated movie data
+    from the repository and provides it to the Paging library
+    It handles successful and error cases and determines the
+    refresh key for data reloading **/
 
 class MoviePagingSource(private val repository: MovieRepository) :
     PagingSource<Int, ResultsItem>() {
