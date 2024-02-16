@@ -36,7 +36,7 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
     val movieFlow: Flow<PagingData<ResultsItem>> =
         Pager(
             config = PagingConfig(
-                pageSize = 20,
+                pageSize = PAGE_SIZE,
                 enablePlaceholders = false
             ),
             pagingSourceFactory = { MoviePagingSource(repository) }
@@ -55,5 +55,9 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
                 _isLoading.value = false
             }
         }
+    }
+
+    companion object{
+        const val PAGE_SIZE=20
     }
 }
